@@ -11,7 +11,7 @@ import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_co
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
 import 'package:covoiturage_senegal/features/payment/pages/payements_page.dart';
 import 'package:flutter/material.dart';
-import 'routes/app_router.dart';
+// import 'routes/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const OnboardingPage(),
-        '/login': (context) => const LoginPage(),
+        // '/login': (context) => const LoginPage(),
+        '/login': (context) => LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/passenger-home-page': (context) => const PassengerHomePage(),
         '/trip-detail': (context) => const TripDetailPage(),
