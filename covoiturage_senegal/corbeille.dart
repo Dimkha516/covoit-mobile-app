@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:covoiturage_senegal/features/auth/widgets/onboarding_button.dart';
-import 'package:covoiturage_senegal/features/auth/widgets/onboarding_image.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -18,32 +15,37 @@ class OnboardingPage extends StatelessWidget {
             children: [
               const OnboardingImage(),
 
-              // ANIMATION:
+              // 👉 ANIMATION AJOUTÉE ICI
               Lottie.asset(
-                'assets/animations/mapanimation.json',
-                height: 130,
+                'assets/animations/car.json',
+                height: 120,
                 repeat: true,
               ),
-              Column(
+
+              const Column(
                 children: [
-                  const Text(
+                  Text(
                     "Bokko Dem",
-                    // style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     style: TextStyle(fontSize: 28, fontFamily: 'RobotoMono'),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 12),
-                  const Text(
+                  SizedBox(height: 12),
+                  Text(
                     "Réservez ou proposez vos trajets en toute simplicité.",
                     style: TextStyle(fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
+                ],
+              ),
+
+              Column(
+                children: [
                   OnboardingButton(
                     label: "Se connecter",
                     icon: Icons.login,
-                    onPressed: () => Navigator.pushNamed(context, "/login"),
+                    onPressed: () => Navigator.pushNamed(context, '/login'),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 8),
                   OnboardingButton(
                     label: "Créer un compte",
                     icon: Icons.person_add,
@@ -51,16 +53,6 @@ class OnboardingPage extends StatelessWidget {
                   ),
                 ],
               ),
-
-              // OnboardingButton(
-              //   label: "Se connecter",
-              //   onPressed: () => Navigator.pushNamed(context, '/login'),
-              // ),
-              // const SizedBox(height: 12),
-              // OnboardingButton(
-              //   label: "Créer un compte",
-              //   onPressed: () => Navigator.pushNamed(context, '/register'),
-              // ),
             ],
           ),
         ),
