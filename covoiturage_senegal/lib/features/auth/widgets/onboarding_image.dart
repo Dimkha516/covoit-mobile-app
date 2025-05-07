@@ -5,6 +5,6 @@ class OnboardingImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/images/logo_voiture.jpg', height: 250);
+    return Image.asset('assets/images/etineraire.jpg', height: 250);
   }
 }
