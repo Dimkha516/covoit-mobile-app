@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:covoiturage_senegal/features/auth/widgets/onboarding_button.dart';
 import 'package:covoiturage_senegal/features/auth/widgets/onboarding_image.dart';
+import 'package:covoiturage_senegal/components/custom_loader.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -41,13 +42,31 @@ class OnboardingPage extends StatelessWidget {
                   OnboardingButton(
                     label: "Se connecter",
                     icon: Icons.login,
-                    onPressed: () => Navigator.pushNamed(context, "/login"),
+                    onPressed: () async {
+                      CustomLoader.show(
+                        context,
+                        message: "Veuillez patienter...",
+                      );
+                      await Future.delayed(const Duration(seconds: 2));
+                      CustomLoader.hide(context);
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    // onPressed: () => Navigator.pushNamed(context, "/login"),
                   ),
                   const SizedBox(height: 12),
                   OnboardingButton(
                     label: "Créer un compte",
                     icon: Icons.person_add,
-                    onPressed: () => Navigator.pushNamed(context, '/register'),
+                    onPressed: () async {
+                      CustomLoader.show(
+                        context,
+                        message: "Veuillez patienter...",
+                      );
+                      await Future.delayed(const Duration(seconds: 2));
+                      CustomLoader.hide(context);
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    //onPressed: () => Navigator.pushNamed(context, '/register'),
                   ),
                 ],
               ),
