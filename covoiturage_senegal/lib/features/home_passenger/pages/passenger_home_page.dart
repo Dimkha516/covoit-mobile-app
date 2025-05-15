@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:covoiturage_senegal/components/profil_link_icon.dart';
 
 class PassengerHomePage extends StatelessWidget {
   const PassengerHomePage({super.key});
@@ -26,11 +27,17 @@ class PassengerHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Text(
-          "Bienvenue 👋",
-          style: TextStyle(color: Colors.black),
-        ),
+        title: const Text("Bienvenue", style: TextStyle(color: Colors.black)),
         centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/profil'),
+            child: const Padding(
+              padding: EdgeInsets.only(right: 12.0),
+              child: ProfilLinkIcon(),
+            ),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

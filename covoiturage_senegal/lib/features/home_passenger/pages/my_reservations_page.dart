@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covoiturage_senegal/components/reservations_card.dart';
+import 'package:covoiturage_senegal/components/profil_link_icon.dart';
 
 class MyReservationsPage extends StatelessWidget {
   const MyReservationsPage({super.key});
@@ -33,7 +34,20 @@ class MyReservationsPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Mes réservations"), centerTitle: true),
+      appBar: AppBar(
+        title: const Text("Mes réservations"),
+        centerTitle: true,
+        actions: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/profil'),
+            child: const Padding(
+              padding: EdgeInsets.only(right: 12.0),
+              child: ProfilLinkIcon(),
+            ),
+          ),
+        ],
+      ),
+
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: reservations.length,

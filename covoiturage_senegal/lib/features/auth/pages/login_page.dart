@@ -1,5 +1,8 @@
-import 'package:covoiturage_senegal/components/custom_text_field.dart';
+import 'package:covoiturage_senegal/features/home_passenger/pages/passenger_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:covoiturage_senegal/components/custom_text_field.dart';
+import 'package:covoiturage_senegal/components/custom_loader.dart';
+import 'package:covoiturage_senegal/components/full_screen_loader.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -152,8 +155,29 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildLoginButton(Color primaryColor) {
     return ElevatedButton(
-      onPressed: () {
-        // LOGIQUE DE CONNEXION PLUS TARD
+      // onPressed: () async {
+      //   FullScreenLoader.show(
+      //     context,
+      //     message: "Connexion en cours...",
+      //     backgroundColor: Colors.black.withOpacity(0.7),
+      //     loaderColor: const Color.fromARGB(255, 243, 242, 245),
+      //     textStyle: const TextStyle(fontSize: 18, color: Colors.white),
+      //   );
+
+      //   await Future.delayed(const Duration(seconds: 2));
+
+      //   FullScreenLoader.hide();
+
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (_) => PassengerHomePage()),
+      //   );
+      // },
+      // child: const Text("Se connecter"),
+      onPressed: () async {
+        CustomLoader.show(context, message: "Connexion en cours...");
+        await Future.delayed(const Duration(seconds: 2));
+        CustomLoader.hide(context);
         Navigator.pushNamed(context, '/passenger-home-page');
       },
       style: ElevatedButton.styleFrom(

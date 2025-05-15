@@ -10,6 +10,7 @@ import 'package:covoiturage_senegal/features/home_passenger/pages/profil_page.da
 import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_confirmed.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
 import 'package:covoiturage_senegal/features/payment/pages/payements_page.dart';
+import 'package:covoiturage_senegal/features/shared_pages/trip_history_page.dart';
 import 'package:flutter/material.dart';
 // import 'routes/app_router.dart';
 
@@ -41,15 +42,8 @@ class MyApp extends StatelessWidget {
         '/create-trip': (context) => const CreateTrip(),
         '/recieved-reservations': (context) => const RecievedReservations(),
         '/payments': (context) => const PayementsPage(),
+        '/trip_history_page': (context) => const TripHistoryPage(),
       },
     );
   }
-
-  // Widget build(BuildContext context) {
-  //   return MaterialApp.router(
-  //     title: 'Covoiturage Sénégal',
-  //     routerConfig: router,
-  //     debugShowCheckedModeBanner: false,
-  //   );
-  // }
 }

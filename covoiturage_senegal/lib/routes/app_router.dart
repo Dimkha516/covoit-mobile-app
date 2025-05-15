@@ -9,6 +9,7 @@ import 'package:covoiturage_senegal/features/home_passenger/pages/profil_page.da
 import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_confirmed.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
 import 'package:covoiturage_senegal/features/payment/pages/payements_page.dart';
+import 'package:covoiturage_senegal/features/shared_pages/trip_history_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:covoiturage_senegal/features/auth/pages/onboarding_page.dart';
 // import 'package:flutter/material.dart';
@@ -58,6 +59,12 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/payments',
       builder: (context, state) => const PayementsPage(),
+    ),
+
+    //-------------------------TRIPS HISTORY
+    GoRoute(
+      path: '/trip_history_page',
+      builder: (context, state) => const TripHistoryPage(),
     ),
   ],
 );
