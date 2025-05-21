@@ -2,14 +2,16 @@ import 'package:covoiturage_senegal/features/auth/pages/login_page.dart';
 import 'package:covoiturage_senegal/features/auth/pages/register_page.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/create_trip.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/driver_home_page.dart';
+import 'package:covoiturage_senegal/features/home_driver/pages/driver_reservation_details_page.dart';
+import 'package:covoiturage_senegal/features/home_driver/pages/driver_trip_details_page.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/recieved_reservations.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/my_reservations_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/passenger_home_page.dart';
-import 'package:covoiturage_senegal/features/home_passenger/pages/profil_page.dart';
+import 'package:covoiturage_senegal/shared/pages/profil_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_confirmed.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
 import 'package:covoiturage_senegal/features/payment/pages/payements_page.dart';
-import 'package:covoiturage_senegal/features/shared_pages/trip_history_page.dart';
+import 'package:covoiturage_senegal/shared/pages/trip_history_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:covoiturage_senegal/features/auth/pages/onboarding_page.dart';
 // import 'package:flutter/material.dart';
@@ -65,6 +67,20 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/trip_history_page',
       builder: (context, state) => const TripHistoryPage(),
+    ),
+
+    //-------------------------TRIPS INFOS (Côté chauffeur)
+    GoRoute(
+      path: '/driver-trips',
+      builder: (context, state) => const DriverTripDetailsPage(trajet: {}),
+    ),
+
+    //-------------------------RESERVATIONS DETAILS (Côté chauffeur)
+    GoRoute(
+      path: '/driver-reservation-details',
+      builder:
+          (context, state) =>
+              const DriverReservationDetailsPage(reservation: {}),
     ),
   ],
 );

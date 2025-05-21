@@ -17,7 +17,7 @@ class ConfirmationPaiementPage extends StatelessWidget {
             Icon(Icons.check_circle, size: 80, color: Colors.green),
             const SizedBox(height: 24),
             Text(
-              'Paiement via $moyen effectué avec succès !',
+              'Paiment via $moyen effectué avec succès !',
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 18),
             ),

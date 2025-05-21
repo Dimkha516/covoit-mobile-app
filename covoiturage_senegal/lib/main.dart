@@ -3,14 +3,16 @@ import 'package:covoiturage_senegal/features/auth/pages/onboarding_page.dart';
 import 'package:covoiturage_senegal/features/auth/pages/register_page.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/create_trip.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/driver_home_page.dart';
+import 'package:covoiturage_senegal/features/home_driver/pages/driver_reservation_details_page.dart';
+import 'package:covoiturage_senegal/features/home_driver/pages/driver_trip_details_page.dart';
 import 'package:covoiturage_senegal/features/home_driver/pages/recieved_reservations.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/my_reservations_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/passenger_home_page.dart';
-import 'package:covoiturage_senegal/features/home_passenger/pages/profil_page.dart';
+import 'package:covoiturage_senegal/shared/pages/profil_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_confirmed.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
 import 'package:covoiturage_senegal/features/payment/pages/payements_page.dart';
-import 'package:covoiturage_senegal/features/shared_pages/trip_history_page.dart';
+import 'package:covoiturage_senegal/shared/pages/trip_history_page.dart';
 import 'package:flutter/material.dart';
 // import 'routes/app_router.dart';
 
@@ -29,8 +31,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
+        // SAHRED ROUTES:
         '/': (context) => const OnboardingPage(),
-        // '/login': (context) => const LoginPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/passenger-home-page': (context) => const PassengerHomePage(),
@@ -43,6 +45,9 @@ class MyApp extends StatelessWidget {
         '/recieved-reservations': (context) => const RecievedReservations(),
         '/payments': (context) => const PayementsPage(),
         '/trip_history_page': (context) => const TripHistoryPage(),
+        'driver-trips': (context) => const DriverTripDetailsPage(trajet: {}),
+        '/driver-reservation-details':
+            (context) => const DriverReservationDetailsPage(reservation: {}),
       },
     );
   }
