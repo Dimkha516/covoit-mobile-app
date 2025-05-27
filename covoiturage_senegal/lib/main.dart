@@ -8,6 +8,7 @@ import 'package:covoiturage_senegal/features/home_driver/pages/driver_trip_detai
 import 'package:covoiturage_senegal/features/home_driver/pages/recieved_reservations.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/my_reservations_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/passenger_home_page.dart';
+import 'package:covoiturage_senegal/features/home_passenger/pages/passenger_main_page.dart';
 import 'package:covoiturage_senegal/shared/pages/profil_page.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/reservation_confirmed.dart';
 import 'package:covoiturage_senegal/features/home_passenger/pages/trip_detail_page.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const OnboardingPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => const RegisterPage(),
-        '/passenger-home-page': (context) => const PassengerHomePage(),
+        // '/passenger-home-page': (context) => const PassengerHomePage(),
+        '/passenger-home-page': (context) => const PassengerMainPage(),
         '/trip-detail': (context) => const TripDetailPage(),
         '/reservation-confirmed': (context) => const ReservationConfirmed(),
         '/my-reservations': (context) => const MyReservationsPage(),

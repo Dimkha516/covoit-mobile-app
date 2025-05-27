@@ -4,6 +4,7 @@ import '/components/custom_text_field.dart';
 import '/components/user_type_selector.dart';
 import '/components/vehicle_info_form.dart';
 import '/components/terms_checkbox.dart';
+import 'package:covoiturage_senegal/components/custom_loader.dart';
 // import '/models/user_type.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -257,8 +258,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildRegisterButton(Color primaryColor) {
     return ElevatedButton(
-      onPressed: () {
+      onPressed: () async {
         // A COMPLETER: LOGIQUE D'INSCRIPTION
+        CustomLoader.show(context, message: "Connexion en cours...");
+        await Future.delayed(const Duration(seconds: 2));
+        CustomLoader.hide(context);
+        Navigator.pushNamed(context, '/driver-home-page');
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: primaryColor,

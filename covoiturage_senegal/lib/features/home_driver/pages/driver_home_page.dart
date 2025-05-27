@@ -122,9 +122,9 @@ class DriverHomePage extends StatelessWidget {
               child: ElevatedButton.icon(
                 onPressed: () {
                   // Naviguer vers la page création de trajet
-                  Navigator.pushNamed(context, "/create-trip");
+                  // Navigator.pushNamed(context, "/create-trip");
                   // Navigator.pushNamed(context, "/recieved-reservations");
-                  // Navigator.pushNamed(context, "/payments");
+                  Navigator.pushNamed(context, "/payments");
                   // Navigator.pushNamed(context, "/passenger-home-page");
                 },
                 icon: const Icon(Icons.add),
